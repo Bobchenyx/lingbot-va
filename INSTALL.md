@@ -4,52 +4,14 @@
 
 ```bash
 pip install .
-pip install .[dev]  # Installe aussi les outils de dev
+pip install .[dev]  # Also installs dev tools (pytest, black, flake8, isort, mypy)
 ```
 
-## Install with Poetry
+## Handling `flash-attn` Installation Issues
 
-Ensure you have [Poetry](https://python-poetry.org/docs/#installation) installed on your system.
-
-To install all dependencies:
+If `flash-attn` fails due to **PEP 517 build issues**, try:
 
 ```bash
-poetry install
-```
-
-### Handling `flash-attn` Installation Issues
-
-If `flash-attn` fails due to **PEP 517 build issues**, you can try one of the following fixes.
-
-#### No-Build-Isolation Installation (Recommended)
-```bash
-poetry run pip install --upgrade pip setuptools wheel
-poetry run pip install flash-attn --no-build-isolation
-poetry install
-```
-
-#### Install from Git (Alternative)
-```bash
-poetry run pip install git+https://github.com/Dao-AILab/flash-attention.git
-```
-
----
-
-### Running the Model
-
-Once the installation is complete, you can run **Wan2.2** using:
-
-```bash
-poetry run python generate.py --task t2v-A14B --size '1280*720' --ckpt_dir ./Wan2.2-T2V-A14B --prompt "Two anthropomorphic cats in comfy boxing gear and bright gloves fight intensely on a spotlighted stage."
-```
-
-#### Test
-```bash
-bash tests/test.sh
-```
-
-#### Format
-```bash
-black .
-isort .
+pip install --upgrade pip setuptools wheel
+pip install flash-attn --no-build-isolation
 ```

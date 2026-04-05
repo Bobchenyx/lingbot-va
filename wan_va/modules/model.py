@@ -40,10 +40,14 @@ def custom_sdpa(q, k, v):
     return out.transpose(1, 2)
 
 class FlexAttnFunc(nn.Module):
-    flex_attn: ClassVar[Callable] = torch.compile(
-        flex_attention, dynamic=True, 
-    )
-    compiled_create_block_mask: ClassVar[Callable] = torch.compile(create_block_mask)
+    flex_attn: ClassVar[Callable] = None
+    compiled_create_block_mask: ClassVar[Callable] = None
+
+    @classmethod
+    def _compile(cls):
+        if cls.flex_attn is None:
+            cls.flex_attn = torch.compile(flex_attention, dynamic=True)
+            cls.compiled_create_block_mask = torch.compile(create_block_mask)
     attention_mask: ClassVar[BlockMask] = None
     cross_attention_mask: ClassVar[BlockMask] = None
 

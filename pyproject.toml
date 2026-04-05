@@ -3,9 +3,9 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "LingBot_VA"
+name = "NU_VA_V0"
 version = "0.0.0"
-description = "LingBot-VA: A Pragmatic VA Foundation Model"
+description = "NU-VA-V0: Distilled video-action model for robot control"
 authors = [
     { name = "Robbyant Team", email = "fengchang.ll@antgroup.com" }
 ]
@@ -13,8 +13,8 @@ license = { file = "LICENSE.txt" }
 readme = "README.md"
 requires-python = ">=3.10,<4.0"
 dependencies = [
-    "torch>=2.9.0",
-    "torchvision>=0.24.0",
+    "torch>=2.6.0",
+    "torchvision>=0.21.0",
     "diffusers>=0.36.0",
     "transformers>=4.55.4",
     "tokenizers>=0.21.4",
@@ -44,10 +44,10 @@ modelscope = "https://github.com/Robbyant"
 discord = "https://github.com/Robbyant"
 
 [tool.setuptools]
-packages = ["lingbot_va"]
+packages = ["wan_va"]
 
 [tool.setuptools.package-data]
-"lingbot_va" = ["**/*.py"]
+"wan_va" = ["**/*.py"]
 
 [tool.black]
 line-length = 88
