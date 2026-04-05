@@ -65,7 +65,7 @@ The `attn_mode` field in `<model-path>/transformer/config.json` must be `"torch"
 The current config (`va_robotwin_cfg.py`) is set up for the distilled checkpoint with:
 - `num_inference_steps = 2` (video)
 - `action_num_inference_steps = 4` (action)
-- Model path: `/home/user1/workspace/bobchenyx/armanakbari4/joint_actionAware_6000step`
+- Model path: set `wan22_pretrained_model_name_or_path` in `va_robotwin_cfg.py`
 
 ## GPU Memory
 
