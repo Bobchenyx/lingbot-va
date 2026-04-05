@@ -115,17 +115,6 @@ NGPU=1 CONFIG_NAME='robotwin_i2av' bash script/run_launch_va_server_sync.sh
 
 Apache License 2.0. See [LICENSE](LICENSE.txt).
 
-## Citation
-
-```bibtex
-@article{lingbot-va2026,
-  title={Causal World Modeling for Robot Control},
-  author={Li, Lin and Zhang, Qihang and Luo, Yiming and Yang, Shuai and Wang, Ruilin and Han, Fei and Yu, Mingrui and Gao, Zelin and Xue, Nan and Zhu, Xing and Shen, Yujun and Xu, Yinghao},
-  journal={arXiv preprint arXiv:2601.21998},
-  year={2026}
-}
-```
-
 ## Acknowledgments
 
 Built on top of [LingBot-VA](https://github.com/Robbyant/lingbot-va), which uses:
